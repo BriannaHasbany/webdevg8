@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery-Graduation</title>
+    <!-- W3.CSS + Font Awesome -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-overlay">
+        <!-- Logo + Text -->
+        <div class="header-content">
+          <img src="images/logo.png" alt="Bakery Logo" class="logo" />
+          <div class="header-text">
+            <h1>Cakes by Design Edible Art</h1>
+          </div>
+        </div>
+
+        <!-- Navigation (Desktop) -->
+        <nav class="header-nav menu-center w3-hide-small">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="cakeAbout.html" class="nav-item">About Us</a>
+          <a href="cakeServices.html" class="nav-item">Services</a>
+
+          <!-- Gallery Dropdown -->
+          <div class="dropdown">
+            <button
+              class="dropbtn"
+              onclick="toggleDropdown('galleryDropdownDesktop')"
+            >
+              Gallery ▾
+            </button>
+            <div id="galleryDropdownDesktop" class="dropdown-content">
+              <a href="weddingGallery.html">Weddings</a>
+              <a href="birthdayGallery.html">Birthdays</a>
+              <a href="religiousGallery.html">Religious</a>
+              <a href="workGallery.html">Corporate/Retirement</a>
+              <a href="gradGallery.html">Graduation</a>
+              <a href="holidayGallery.html">Holidays</a>
+              <a href="photoGallery.html">Full Photos</a>
+              <a href="cupcakeGallery.html">Cupcakes</a>
+            </div>
+          </div>
+
+          <!-- Contact Dropdown -->
+          <div class="dropdown">
+            <button
+              class="dropbtn"
+              onclick="toggleDropdown('contactDropdownDesktop')"
+            >
+              Contact ▾
+            </button>
+            <div id="contactDropdownDesktop" class="dropdown-content">
+              <a href="cakeContact.html">Contact Info</a>
+              <a href="cakeDirections.html">Directions</a>
+              <a href="cakeOrder.html">Order Form</a>
+              <a href="cakeFAQ.html">FAQs</a>
+            </div>
+          </div>
+
+          <a href="cakeBlog.html" class="nav-item">Blog</a>
+
+          <button
+            id="modeToggle"
+            class="mode-toggle"
+            onclick="toggleDarkMode()"
+          >
+            🌙
+          </button>
+        </nav>
+
+        <!-- Hamburger for Mobile -->
+        <button
+          class="w3-bar-item w3-button w3-hide-medium w3-hide-large menu-toggle"
+          aria-controls="smallMenu"
+          aria-expanded="false"
+          onclick="toggleMenu()"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu with Header Background -->
+    <div id="smallMenu" class="w3-bar-block w3-hide w3-center mobile-menu">
+      <!-- Keep header image on top of mobile menu -->
+      <div class="mobile-header-bg">
+        <img
+          src="images/header-bg.jpg"
+          alt="Header Background"
+          class="mobile-header-img"
+        />
+        <div class="mobile-header-overlay">
+          <img src="images/logo.png" alt="Logo" class="logo" />
+          <h1>Cakes by Design Edible Art</h1>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Links -->
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="cakeAbout.html" class="nav-item">About Us</a>
+      <a href="cakeServices.html" class="nav-item">Services</a>
+
+      <!-- Gallery Dropdown -->
+      <div class="dropdown">
+        <button
+          class="dropbtn"
+          onclick="toggleDropdown('galleryDropdownDesktop')"
+        >
+          Gallery ▾
+        </button>
+        <div id="galleryDropdownDesktop" class="dropdown-content">
+          <a href="weddingGallery.html">Weddings</a>
+          <a href="birthdayGallery.html">Birthdays</a>
+          <a href="religiousGallery.html">Religious</a>
+          <a href="workGallery.html">Corporate/Retirement</a>
+          <a href="gradGallery.html">Graduation</a>
+          <a href="holidayGallery.html">Holidays</a>
+          <a href="photoGallery.html">Full Photos</a>
+          <a href="cupcakeGallery.html">Cupcakes</a>
+        </div>
+      </div>
+
+      <!-- Contact Dropdown -->
+      <div class="dropdown">
+        <button
+          class="dropbtn"
+          onclick="toggleDropdown('contactDropdownDesktop')"
+        >
+          Contact ▾
+        </button>
+        <div id="contactDropdownDesktop" class="dropdown-content">
+          <a href="cakeContact.html">Contact Info</a>
+          <a href="cakeDirections.html">Directions</a>
+          <a href="cakeOrder.html">Order Form</a>
+          <a href="cakeFAQ.html">FAQs</a>
+        </div>
+      </div>
+
+      <a href="cakeBlog.html" class="w3-bar-item w3-button">Blog</a>
+      <button id="modeToggle" class="mode-toggle" onclick="toggleDarkMode()">
+        🌙
+      </button>
+    </div>
+
+    <!-- Main Content -->
+    <section class="w3-container">
+      <div class="w3-row">
+        <div class="w3-quarter w3-center w3-card">
+          <div class="w3-padding-64">Part 1/4</div>
+        </div>
+        <div class="w3-quarter w3-center w3-card">
+          <div class="w3-padding-64">Part 2/4</div>
+        </div>
+        <div class="w3-quarter w3-center w3-card">
+          <div class="w3-padding-64">Part 3/4</div>
+        </div>
+        <div class="w3-quarter w3-center w3-card">
+          <div class="w3-padding-64">Part 4/4</div>
+        </div>
+      </div>
+      <hr />
+      <div class="w3-row">
+        <div class="w3-third w3-center w3-card">
+          <div class="w3-padding-64">Part 1/3</div>
+        </div>
+        <div class="w3-third w3-center w3-card">
+          <div class="w3-padding-64">Part 2/3</div>
+        </div>
+        <div class="w3-third w3-center w3-card">
+          <div class="w3-padding-64">Part 3/3</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="site-footer">
+      <div class="footer-overlay"></div>
+      <div class="footer-content">
+        <div class="footer-contact">
+          <p><strong>Contact Us</strong></p>
+          <p>Email: cakesbydesignedibleart@hotmail.com</p>
+          <p>Phone: (978) 975-8877</p>
+          <p>2-4 Johnson St</p>
+          <p>North Andover, MA 01845</p>
+        </div>
+
+        <div class="footer-recommend">
+          <a
+            href="https://www.alignable.com/north-andover-ma/cakes-by-design-edible-art"
+            target="_blank"
+            ><button>🌟 Recommended by Locals</button></a
+          >
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/CakesByDesignMA" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://x.com/CakesByDesign12" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/cakesbydesignea/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.pinterest.com/cakesbydesignma/" target="_blank"
+            ><i class="fab fa-pinterest-p"></i
+          ></a>
+          <a
+            href="https://www.google.com/search?q=cakes+by+design+edible+art+north+andover+ma&oq=cakes+by+design+edible+art+north+andover+ma&aqs=chrome..69i57j69i60.6871j0j7&sourceid=chrome&ie=UTF-8#lrd=0x89e305dde5fee3e7:0x2b1afae4f3cc8987,1,,"
+            target="_blank"
+            ><i class="fab fa-google"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

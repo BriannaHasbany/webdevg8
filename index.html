@@ -38,50 +38,38 @@
           <a href="cakeServices.html" class="nav-item">Services</a>
 
           <!-- Gallery Dropdown -->
-          <div class="w3-dropdown-hover nav-item">
-            <button class="w3-button">Gallery ▾</button>
-            <div class="w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="weddingGallery.html" class="w3-bar-item w3-button"
-                >Weddings</a
-              >
-              <a href="birthdayGallery.html" class="w3-bar-item w3-button"
-                >Birthdays</a
-              >
-              <a href="religiousGallery.html" class="w3-bar-item w3-button"
-                >Religious</a
-              >
-              <a href="workGallery.html" class="w3-bar-item w3-button"
-                >Corporate/Retirement</a
-              >
-              <a href="gradGallery.html" class="w3-bar-item w3-button"
-                >Graduation</a
-              >
-              <a href="holidayGallery.html" class="w3-bar-item w3-button"
-                >Holidays</a
-              >
-              <a href="photoGallery.html" class="w3-bar-item w3-button"
-                >Full Photos</a
-              >
-              <a href="cupcakeGallery.html" class="w3-bar-item w3-button"
-                >Cupcakes</a
-              >
+          <div class="dropdown">
+            <button
+              class="dropbtn"
+              onclick="toggleDropdown('galleryDropdownDesktop')"
+            >
+              Gallery ▾
+            </button>
+            <div id="galleryDropdownDesktop" class="dropdown-content">
+              <a href="weddingGallery.html">Weddings</a>
+              <a href="birthdayGallery.html">Birthdays</a>
+              <a href="religiousGallery.html">Religious</a>
+              <a href="workGallery.html">Corporate/Retirement</a>
+              <a href="gradGallery.html">Graduation</a>
+              <a href="holidayGallery.html">Holidays</a>
+              <a href="photoGallery.html">Full Photos</a>
+              <a href="cupcakeGallery.html">Cupcakes</a>
             </div>
           </div>
 
           <!-- Contact Dropdown -->
-          <div class="w3-dropdown-hover nav-item">
-            <button class="w3-button">Contact ▾</button>
-            <div class="w3-dropdown-content w3-bar-block w3-card-4">
-              <a href="cakeContact.html" class="w3-bar-item w3-button"
-                >Contact Info</a
-              >
-              <a href="cakeDirections.html" class="w3-bar-item w3-button"
-                >Directions</a
-              >
-              <a href="cakeOrder.html" class="w3-bar-item w3-button"
-                >Order Form</a
-              >
-              <a href="cakeFAQ.html" class="w3-bar-item w3-button">FAQs</a>
+          <div class="dropdown">
+            <button
+              class="dropbtn"
+              onclick="toggleDropdown('contactDropdownDesktop')"
+            >
+              Contact ▾
+            </button>
+            <div id="contactDropdownDesktop" class="dropdown-content">
+              <a href="cakeContact.html">Contact Info</a>
+              <a href="cakeDirections.html">Directions</a>
+              <a href="cakeOrder.html">Order Form</a>
+              <a href="cakeFAQ.html">FAQs</a>
             </div>
           </div>
 
@@ -128,46 +116,40 @@
       <a href="cakeAbout.html" class="nav-item">About Us</a>
       <a href="cakeServices.html" class="nav-item">Services</a>
 
-      <button
-        onclick="toggleDropdown('galleryDropdown')"
-        class="w3-bar-item w3-button"
-      >
-        Gallery ▾
-      </button>
-      <div id="galleryDropdown" class="w3-hide w3-bar-block">
-        <a href="weddingGallery.html" class="w3-bar-item w3-button">Weddings</a>
-        <a href="birthdayGallery.html" class="w3-bar-item w3-button"
-          >Birthdays</a
+      <!-- Gallery Dropdown -->
+      <div class="dropdown">
+        <button
+          class="dropbtn"
+          onclick="toggleDropdown('galleryDropdownDesktop')"
         >
-        <a href="religiousGallery.html" class="w3-bar-item w3-button"
-          >Religious</a
-        >
-        <a href="workGallery.html" class="w3-bar-item w3-button"
-          >Corporate/Retirement</a
-        >
-        <a href="gradGallery.html" class="w3-bar-item w3-button">Graduation</a>
-        <a href="holidayGallery.html" class="w3-bar-item w3-button">Holidays</a>
-        <a href="photoGallery.html" class="w3-bar-item w3-button"
-          >Full Photos</a
-        >
-        <a href="cupcakeGallery.html" class="w3-bar-item w3-button">Cupcakes</a>
+          Gallery ▾
+        </button>
+        <div id="galleryDropdownDesktop" class="dropdown-content">
+          <a href="weddingGallery.html">Weddings</a>
+          <a href="birthdayGallery.html">Birthdays</a>
+          <a href="religiousGallery.html">Religious</a>
+          <a href="workGallery.html">Corporate/Retirement</a>
+          <a href="gradGallery.html">Graduation</a>
+          <a href="holidayGallery.html">Holidays</a>
+          <a href="photoGallery.html">Full Photos</a>
+          <a href="cupcakeGallery.html">Cupcakes</a>
+        </div>
       </div>
 
-      <button
-        onclick="toggleDropdown('contactDropdown')"
-        class="w3-bar-item w3-button"
-      >
-        Contact ▾
-      </button>
-      <div id="contactDropdown" class="w3-hide w3-bar-block">
-        <a href="cakeContact.html" class="w3-bar-item w3-button"
-          >Contact Info</a
+      <!-- Contact Dropdown -->
+      <div class="dropdown">
+        <button
+          class="dropbtn"
+          onclick="toggleDropdown('contactDropdownDesktop')"
         >
-        <a href="cakeDirections.html" class="w3-bar-item w3-button"
-          >Directions</a
-        >
-        <a href="cakeOrder.html" class="w3-bar-item w3-button">Order Form</a>
-        <a href="cakeFAQ.html" class="w3-bar-item w3-button">FAQs</a>
+          Contact ▾
+        </button>
+        <div id="contactDropdownDesktop" class="dropdown-content">
+          <a href="cakeContact.html">Contact Info</a>
+          <a href="cakeDirections.html">Directions</a>
+          <a href="cakeOrder.html">Order Form</a>
+          <a href="cakeFAQ.html">FAQs</a>
+        </div>
       </div>
 
       <a href="cakeBlog.html" class="w3-bar-item w3-button">Blog</a>

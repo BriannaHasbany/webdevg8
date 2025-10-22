@@ -9,9 +9,23 @@ function toggleMenu() {
 }
 
 function toggleDropdown(id) {
-  const dropdown = document.getElementById(id);
-  dropdown.classList.toggle("w3-hide");
+  const dropdown = document.getElementById(id).parentElement;
+  dropdown.classList.toggle("show");
+
+  // Close any other open dropdowns
+  document.querySelectorAll(".dropdown").forEach((d) => {
+    if (d !== dropdown) d.classList.remove("show");
+  });
 }
+
+// Close dropdown if user clicks elsewhere
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    document
+      .querySelectorAll(".dropdown")
+      .forEach((d) => d.classList.remove("show"));
+  }
+};
 
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");

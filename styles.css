@@ -143,24 +143,58 @@ body.dark-mode {
   color: var(--button-bg) !important;
 }
 
-/* Dropdown */
-.w3-dropdown-content {
-  background-color: var(--button-bg) !important;
-  color: var(--nav-text-color) !important;
-  min-width: 200px;
-  border-radius: 6px;
-  overflow: hidden;
-  z-index: 1000;
+/* Click Dropdowns */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.w3-dropdown-content a {
-  display: block;
+.dropbtn {
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 10px 16px;
+  min-width: 110px;
+  font-weight: 600;
+  cursor: pointer;
   text-align: center;
 }
 
-.w3-dropdown-content a:hover {
-  background-color: var(--primary-color) !important;
-  color: var(--button-bg) !important;
+.dropbtn:hover {
+  background-color: var(--primary-color);
+  color: var(--button-bg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* appears below the button */
+  left: 0;
+  background-color: var(--button-bg);
+  min-width: 200px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  text-align: center;
+  padding: 10px 16px;
+  color: var(--nav-text-color);
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--primary-color);
+  color: var(--button-bg);
+}
+
+/* When active */
+.dropdown.show .dropdown-content {
+  display: block;
 }
 
 /* -------------------- Hamburger / Mobile Menu -------------------- */
