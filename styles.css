@@ -1,0 +1,455 @@
+/* -------------------- Global -------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* -------------------- Light/Dark Mode Variables -------------------- */
+:root {
+  --primary-color: #1abc9c;      /* teal/lightblue */
+  --secondary-color: #964296;    /* purple header */
+  --button-bg: #fff;
+  --button-color: var(--primary-color);
+  --overlay-color: rgba(128,0,128,0.35);
+  --nav-text-color: var(--primary-color);
+  --body-bg: #ffffff;            /* white background for light mode */
+  --text-color: #222;            /* dark text for light mode */
+  --card-bg: #e0f7f5;            /* teal-tinted card */
+}
+
+body.dark-mode {
+  --primary-color: #1abc9c;
+  --secondary-color: #4b0082;
+  --button-bg: #333;
+  --button-color: #fff;
+  --overlay-color: rgba(75,0,130,0.7);
+  --nav-text-color: #fff;
+  --body-bg: #121212;           /* dark background for dark mode */
+  --text-color: #f5f5f5;        /* light text for dark mode */
+  --card-bg: #167f77;           /* deeper teal for dark mode */
+}
+
+/* -------------------- Content Containers -------------------- */
+.card, .content-box, .info-section {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .content-box:hover, .info-section:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* -------------------- Header -------------------- */
+.site-header {
+  position: relative;
+  background-image: url("images/sprinkles-header.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  width: 100%;
+  color: white;
+}
+
+.header-overlay {
+  position: absolute; /* overlay now covers header fully */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* full height of header */
+  background: var(--overlay-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 20px; 
+}
+
+
+/* Logo + Text container */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+/* Header Text */
+.header-text h1 {
+  font-size: 4rem;
+  font-weight: 400;  
+  margin: 0;
+  color: rgb(246, 243, 243);
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* stronger shadow */
+}
+
+.header-text p {
+  font-size: 1.2rem;
+  margin: 5px 0 0 0;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+/* -------------------- Navigation -------------------- */
+.header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.nav-item {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 110px; /* uniform size */
+  padding: 10px 16px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+.nav-item:hover,
+.w3-dropdown-hover:hover .nav-item {
+  background-color: var(--primary-color);
+  color: var(--button-bg) !important;
+}
+
+/* Dropdown */
+.w3-dropdown-content {
+  background-color: var(--button-bg) !important;
+  color: var(--nav-text-color) !important;
+  min-width: 200px;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.w3-dropdown-content a {
+  display: block;
+  text-align: center;
+}
+
+.w3-dropdown-content a:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--button-bg) !important;
+}
+
+/* -------------------- Hamburger / Mobile Menu -------------------- */
+.menu-toggle {
+  font-size: 22px;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  position: absolute;
+  top: 20px; /* stick top right on header */
+  right: 20px;
+}
+
+.menu-toggle:hover {
+  background-color: var(--primary-color);
+  color: var(--button-bg);
+}
+
+/* -------------------- Light/Dark Toggle -------------------- */
+.mode-toggle {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background: none;
+  border: 2px solid var(--button-color);
+  color: var(--button-color);
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 70px; /* next to hamburger */
+}
+
+.mode-toggle:hover {
+  background-color: var(--button-color);
+  color: var(--button-bg);
+}
+
+/* -------------------- Mobile Menu -------------------- */
+.mobile-menu {
+  text-align: center;
+  background-color: var(--button-bg);
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Mobile Header Background */
+.mobile-header-bg {
+  position: relative;
+  width: 100%;
+  height: 180px; /* shorter mobile header */
+  overflow: hidden;
+}
+
+.mobile-header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobile-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.mobile-header-overlay .logo {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.mobile-header-overlay h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+/* Mobile Menu Links */
+.mobile-menu .w3-bar-item {
+  color: var(--nav-text-color);
+  padding: 12px 16px;
+}
+
+.mobile-menu .w3-bar-item:hover {
+  background-color: var(--primary-color);
+  color: var(--button-bg);
+}
+
+
+/* -------------------- Footer -------------------- */
+.site-footer {
+  position: relative;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 50px 20px;
+  margin-top: 60px;
+}
+
+/* Overlay removed — using solid background instead */
+.footer-overlay {
+  display: none;
+}
+.footer-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Contact Info — cleaner, more contrast */
+.footer-contact {
+  flex: 1 1 250px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+.footer-contact strong {
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
+
+/* Recommended Button */
+.footer-recommend {
+  flex: 1 1 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-recommend button {
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  border: 2px solid var(--button-color);
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.footer-recommend button:hover {
+  background-color: var(--primary-color);
+  color: var(--button-bg);
+  transform: translateY(-3px);
+}
+
+/* Social Icons */
+.footer-socials {
+  flex: 1 1 250px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border: 2px solid var(--button-bg);
+  color: var(--button-bg);
+  border-radius: 50%;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background-color: var(--primary-color);
+  color: var(--button-bg);
+  transform: translateY(-3px);
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .footer-contact {
+  color: #eaeaea;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+body.dark-mode .footer-contact strong {
+  color: var(--primary-color);
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+}
+
+body.dark-mode .footer-socials a {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+body.dark-mode .footer-socials a:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .header-text h1 {
+    font-size: 2rem;
+  }
+  .header-text p {
+    font-size: 1rem;
+  }
+  .header-nav {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .menu-toggle {
+    top: 15px;
+    right: 20px;
+  }
+  .mode-toggle {
+    top: 15px;
+    right: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-text h1 {
+    font-size: 1.5rem;
+  }
+  .header-text p {
+    font-size: 0.9rem;
+  }
+  .nav-item {
+    min-width: 90px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+}
