@@ -10,6 +10,19 @@ html, body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Ensure background fills full page, even if content is short */
+body::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--body-bg);
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
 /* -------------------- Light/Dark Mode Variables -------------------- */
 :root {
   --primary-color: #1abc9c;      /* teal/lightblue */
@@ -20,7 +33,7 @@ html, body {
   --nav-text-color: var(--primary-color);
   --body-bg: #ffffff;            /* white background for light mode */
   --text-color: #222;            /* dark text for light mode */
-  --card-bg: #e0f7f5;            /* teal-tinted card */
+  --card-bg: #98ece5;            /* teal-tinted card */
 }
 
 body.dark-mode {
@@ -50,6 +63,14 @@ body.dark-mode {
 
 .card:hover, .content-box:hover, .info-section:hover {
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Make images behave like cards */
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* show entire image */
+  border-radius: 15px;
 }
 
 /* -------------------- Header -------------------- */
@@ -488,6 +509,173 @@ body.dark-mode .footer-socials a:hover {
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* --------------------  Image Carousel -------------------- */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;       /* desired width */
+  max-height: 400px;      /* limit height */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+  display: flex;
+  align-items: center;    /* vertical center */
+  justify-content: center; /* horizontal center */
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.carousel-slides img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;     /* ensures entire image fits */
+  flex-shrink: 0;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* -------------------- Instagram Embeds -------------------- */
+.instagram-embed {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-embed:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+
+/* -------------------- Anniversary Section -------------------- */
+.anniversary-section {
+  background: var(--body-bg);
+  padding: 60px 20px;
+}
+
+.anniversary-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 20px;
+  padding: 40px 30px;
+  margin: 0 auto;
+  max-width: 900px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.wide-card {
+  width: 95%;
+  max-width: 1200px;
+}
+
+.anniversary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.anniversary-card h2 {
+  font-size: 2.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.anniversary-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 25px;
+}
+
+.anniversary-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+.anniversary-text {
+  font-size: 1rem;
+  margin: 15px auto;
+  max-width: 700px;
+}
+
+.city-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px auto;
+  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.city-list li {
+  background: var(--button-bg);      /* uses theme-aware variable */
+  color: var(--button-color);        /* uses theme-aware variable */
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.city-list li:hover {
+  background: var(--primary-color);  
+  color: var(--button-bg);           /* invert for hover */
+}
+
+.anniversary-footer {
+  font-style: italic;
+  margin-top: 30px;
+  color: var(--text-color);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .anniversary-card {
+    padding: 25px 20px;
+  }
+
+  .anniversary-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .city-list {
+    gap: 8px;
   }
 }
 
