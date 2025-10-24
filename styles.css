@@ -239,6 +239,9 @@ body.dark-mode {
   position: absolute;
   top: 20px;
   right: 20px;
+   /* Remove default focus outline */
+  outline: none;
+  box-shadow: none;
 }
 
 .menu-toggle:hover {
