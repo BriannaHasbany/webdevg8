@@ -682,6 +682,11 @@ body.dark-mode .footer-socials a:hover {
   }
 }
 
+/* Image Medium */
+.iMed {
+  width: 300px;
+  height: 300px;
+}
 
 
 /* -------------------- Responsive -------------------- */
