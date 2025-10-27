@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <a href="gradGallery.html">Graduation</a>
               <a href="holidayGallery.html">Holidays</a>
               <a href="photoGallery.html">Full Photos</a>
-              <a href="cupcakeGallery.html">Cupcakes</a>
+              <a href="cupcakeGallery.html">Cupcakes & Sweets</a>
             </div>
           </div>
 
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="gradGallery.html" class="w3-bar-item w3-button">Graduation</a>
         <a href="holidayGallery.html" class="w3-bar-item w3-button">Holidays</a>
         <a href="photoGallery.html" class="w3-bar-item w3-button">Full Photos</a>
-        <a href="cupcakeGallery.html" class="w3-bar-item w3-button">Cupcakes</a>
+        <a href="cupcakeGallery.html" class="w3-bar-item w3-button">Cupcakes & Sweets</a>
       </div>
 
       <button onclick="toggleDropdown('contactDropdown')" class="w3-bar-item w3-button">Contact ▾</button>
@@ -219,3 +219,38 @@ document.addEventListener("DOMContentLoaded", function () {
   const footerContainer = document.getElementById("footer");
   if (footerContainer) footerContainer.innerHTML = footerHTML;
 });
+
+// -------------------- IMAGE CAROUSEL --------------------
+let slideIndex = 0;
+const slidesContainer = document.querySelector(".carousel-slides");
+const slides = document.querySelectorAll(".carousel-slides img");
+const totalSlides = slides.length;
+
+// Move to next slide automatically
+function nextSlide() {
+  slideIndex = (slideIndex + 1) % totalSlides;
+  updateSlidePosition();
+}
+
+// Move to previous slide manually
+function prevSlide() {
+  slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+  updateSlidePosition();
+}
+
+// Update the transform to show the current slide
+function updateSlidePosition() {
+  slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+
+// Auto-slide every 4 seconds
+let autoSlide = setInterval(nextSlide, 4000);
+
+// Optional: reset timer when manually navigating
+document.querySelectorAll(".carousel-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(nextSlide, 4000);
+  });
+});
+
