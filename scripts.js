@@ -254,3 +254,17 @@ document.querySelectorAll(".carousel-btn").forEach(btn => {
   });
 });
 
+// Open the lightbox
+function openLightbox(imgSrc) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = imgSrc;
+  lightbox.classList.add('show');
+}
+
+// Close the lightbox
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('show');
+}
+

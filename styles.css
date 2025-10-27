@@ -1,13 +1,23 @@
 /* -------------------- Global -------------------- */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   height: 100%;
   box-sizing: border-box;
   background-color: var(--body-bg);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
 }
 
 /* Ensure background fills full page, even if content is short */
@@ -25,15 +35,15 @@ body::before {
 }
 /* -------------------- Light/Dark Mode Variables -------------------- */
 :root {
-  --primary-color: #1abc9c;      /* teal/lightblue */
-  --secondary-color: #964296;    /* purple header */
+  --primary-color: #1abc9c; /* teal/lightblue */
+  --secondary-color: #964296; /* purple header */
   --button-bg: #fff;
   --button-color: var(--primary-color);
-  --overlay-color: rgba(128,0,128,0.35);
+  --overlay-color: rgba(128, 0, 128, 0.35);
   --nav-text-color: var(--primary-color);
-  --body-bg: #ffffff;            /* white background for light mode */
-  --text-color: #222;            /* dark text for light mode */
-  --card-bg: #98ece5;            /* teal-tinted card */
+  --body-bg: #ffffff; /* white background for light mode */
+  --text-color: #222; /* dark text for light mode */
+  --card-bg: #98ece5; /* teal-tinted card */
 }
 
 body.dark-mode {
@@ -41,15 +51,17 @@ body.dark-mode {
   --secondary-color: #4b0082;
   --button-bg: #333;
   --button-color: #fff;
-  --overlay-color: rgba(75,0,130,0.7);
+  --overlay-color: rgba(75, 0, 130, 0.7);
   --nav-text-color: #fff;
-  --body-bg: #121212;           /* dark background for dark mode */
-  --text-color: #f5f5f5;        /* light text for dark mode */
-  --card-bg: #167f77;           /* deeper teal for dark mode */
+  --body-bg: #121212; /* dark background for dark mode */
+  --text-color: #f5f5f5; /* light text for dark mode */
+  --card-bg: #167f77; /* deeper teal for dark mode */
 }
 
 /* -------------------- Content Containers -------------------- */
-.card, .content-box, .info-section {
+.card,
+.content-box,
+.info-section {
   background-color: var(--card-bg);
   color: var(--text-color);
   border-radius: 15px;
@@ -57,13 +69,15 @@ body.dark-mode {
   margin: 20px auto;
   width: 90%;
   max-width: 800px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   flex-wrap: wrap;
 }
 
-.card:hover, .content-box:hover, .info-section:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+.card:hover,
+.content-box:hover,
+.info-section:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Make images behave like cards */
@@ -90,8 +104,6 @@ body.dark-mode {
   flex: 1;
 }
 
-
-
 /* -------------------- Header -------------------- */
 .site-header {
   position: relative;
@@ -112,13 +124,12 @@ body.dark-mode {
   background: var(--overlay-color);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   padding: 20px;
-  gap: 20px; 
+  gap: 20px;
 }
-
 
 /* Logo + Text container */
 .header-content {
@@ -139,16 +150,16 @@ body.dark-mode {
 /* Header Text */
 .header-text h1 {
   font-size: 4rem;
-  font-weight: 400;  
+  font-weight: 400;
   margin: 0;
   color: rgb(246, 243, 243);
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.7); /* stronger shadow */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7); /* stronger shadow */
 }
 
 .header-text p {
   font-size: 1.2rem;
   margin: 5px 0 0 0;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* -------------------- Navigation -------------------- */
@@ -258,7 +269,7 @@ body.dark-mode {
   position: absolute;
   top: 20px;
   right: 20px;
-   /* Remove default focus outline */
+  /* Remove default focus outline */
   outline: none;
   box-shadow: none;
 }
@@ -296,8 +307,6 @@ body.dark-mode {
   opacity: 1;
 }
 
-
-
 /* -------------------- Light/Dark Toggle -------------------- */
 .mode-toggle {
   width: 40px;
@@ -329,7 +338,7 @@ body.dark-mode {
 /* Mobile mode toggle always visible under hamburger */
 #modeToggleMobile {
   position: absolute;
-  top: 65px;   /* adjust distance from top of header */
+  top: 65px; /* adjust distance from top of header */
   right: 20px;
   width: 40px;
   height: 40px;
@@ -346,7 +355,6 @@ body.dark-mode {
   background-color: var(--button-color);
   color: var(--button-bg);
 }
-
 
 /* Mobile Header Background */
 .mobile-header-bg {
@@ -380,7 +388,7 @@ body.dark-mode {
   font-size: 1.5rem;
   margin: 0;
   text-align: center;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* Mobile Menu Links */
@@ -393,7 +401,6 @@ body.dark-mode {
   background-color: var(--primary-color);
   color: var(--button-bg);
 }
-
 
 /* -------------------- Footer -------------------- */
 .site-footer {
@@ -427,7 +434,7 @@ body.dark-mode {
   font-size: 1rem;
   line-height: 1.6;
   color: #fff;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .footer-contact strong {
@@ -436,7 +443,7 @@ body.dark-mode {
   display: block;
   margin-bottom: 10px;
   color: var(--primary-color);
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
 }
 
 .footer-contact p {
@@ -460,7 +467,7 @@ body.dark-mode {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 .footer-recommend button:hover {
@@ -499,12 +506,12 @@ body.dark-mode {
 /* Dark Mode Adjustments */
 body.dark-mode .footer-contact {
   color: #eaeaea;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 body.dark-mode .footer-contact strong {
   color: var(--primary-color);
-  text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
 }
 
 body.dark-mode .footer-socials a {
@@ -525,7 +532,6 @@ body.dark-mode .footer-socials a:hover {
   }
 }
 
-
 /* Responsive */
 @media (max-width: 768px) {
   .footer-content {
@@ -538,15 +544,15 @@ body.dark-mode .footer-socials a:hover {
 .carousel-container {
   position: relative;
   width: 100%;
-  max-width: 600px;       /* desired width */
-  max-height: 400px;      /* limit height */
+  max-width: 600px; /* desired width */
+  max-height: 400px; /* limit height */
   margin: 20px auto;
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
   display: flex;
-  align-items: center;    /* vertical center */
+  align-items: center; /* vertical center */
   justify-content: center; /* horizontal center */
 }
 
@@ -558,7 +564,7 @@ body.dark-mode .footer-socials a:hover {
 .carousel-slides img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;     /* ensures entire image fits */
+  object-fit: contain; /* ensures entire image fits */
   flex-shrink: 0;
   display: block;
 }
@@ -567,7 +573,7 @@ body.dark-mode .footer-socials a:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
   font-size: 1.5rem;
@@ -578,27 +584,29 @@ body.dark-mode .footer-socials a:hover {
 }
 
 .carousel-btn:hover {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
 
 /* -------------------- Instagram Embeds -------------------- */
 .instagram-embed {
   width: 100%;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .instagram-embed:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-
-
 
 /* -------------------- Anniversary Section -------------------- */
 .anniversary-section {
@@ -616,7 +624,6 @@ body.dark-mode .footer-socials a:hover {
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .wide-card {
   width: 95%;
@@ -667,8 +674,8 @@ body.dark-mode .footer-socials a:hover {
 }
 
 .city-list li {
-  background: var(--button-bg);      /* uses theme-aware variable */
-  color: var(--button-color);        /* uses theme-aware variable */
+  background: var(--button-bg); /* uses theme-aware variable */
+  color: var(--button-color); /* uses theme-aware variable */
   padding: 8px 18px;
   border-radius: 20px;
   font-weight: 600;
@@ -676,8 +683,8 @@ body.dark-mode .footer-socials a:hover {
 }
 
 .city-list li:hover {
-  background: var(--primary-color);  
-  color: var(--button-bg);           /* invert for hover */
+  background: var(--primary-color);
+  color: var(--button-bg); /* invert for hover */
 }
 
 .anniversary-footer {
@@ -707,8 +714,99 @@ body.dark-mode .footer-socials a:hover {
   height: 300px;
 }
 
+.gallery-page .w3-row-padding {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.w3-third {
+  flex: 1 1 calc(33.333% - 16px); /* 3 columns with gap */
+  display: flex;
+}
+
+.gallery-card {
+  background-color: var(--card-bg);
+  border: 4px solid var(--primary-color); /* teal border */
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 300px; /* fixed height, matches other cards */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* ensures entire image is visible */
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05); /* subtle zoom on hover */
+}
 
 
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .w3-third {
+    flex: 1 1 100%;
+  }
+}
+/* Lightbox overlay */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* Show overlay */
+.lightbox-overlay.show {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive stacking */
+@media screen and (max-width: 900px) {
+  .gallery-page .w3-third {
+    width: 50%;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery-page .w3-third {
+    width: 100%;
+    display: block;
+  }
+}
 
 /* -------------------- Responsive -------------------- */
 @media (max-width: 768px) {
@@ -738,10 +836,7 @@ body.dark-mode .footer-socials a:hover {
     top: 15px;
     right: 60px;
   }
-  
 }
-
-
 
 @media (max-width: 480px) {
   .header-text h1 {
@@ -755,7 +850,6 @@ body.dark-mode .footer-socials a:hover {
     padding: 8px 12px;
     font-size: 0.9rem;
   }
-
 }
 
 /* Hide the desktop mode toggle on mobile */
@@ -771,5 +865,3 @@ body.dark-mode .footer-socials a:hover {
     display: none;
   }
 }
-
-
