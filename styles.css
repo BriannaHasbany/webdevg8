@@ -59,6 +59,7 @@ body.dark-mode {
   max-width: 800px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  flex-wrap: wrap;
 }
 
 .card:hover, .content-box:hover, .info-section:hover {
@@ -72,6 +73,24 @@ body.dark-mode {
   object-fit: contain; /* show entire image */
   border-radius: 15px;
 }
+
+/* Equal card heights only in the equal-cards section */
+.equal-cards .w3-row-padding.w3-stretch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.equal-cards .w3-half {
+  display: flex;
+  flex-direction: column;
+}
+
+.equal-cards .card {
+  flex: 1;
+}
+
+
 
 /* -------------------- Header -------------------- */
 .site-header {
@@ -687,6 +706,8 @@ body.dark-mode .footer-socials a:hover {
   width: 300px;
   height: 300px;
 }
+
+
 
 
 /* -------------------- Responsive -------------------- */
