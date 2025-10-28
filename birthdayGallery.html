@@ -21,43 +21,191 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    
     <!-- Header -->
     <div id="header"></div>
 
     <!-- Main Content -->
-    <section class="w3-container">
-      <div class="w3-row">
-        <div class="w3-quarter w3-center w3-card">
-          <div class="w3-padding-64">Part 1/4</div>
+    <div class="w3-container w3-teal w3-center">
+      <h1>Birthday Gallery</h1>
+      <h5><i>Click Photos to Enlarge</i></h5>
+    </div>
+
+    <section class="w3-container gallery-page">
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday1.jpg"
+              alt="Birthday 1"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
-        <div class="w3-quarter w3-center w3-card">
-          <div class="w3-padding-64">Part 2/4</div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday2.jpg"
+              alt="Birthday 2"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
-        <div class="w3-quarter w3-center w3-card">
-          <div class="w3-padding-64">Part 3/4</div>
-        </div>
-        <div class="w3-quarter w3-center w3-card">
-          <div class="w3-padding-64">Part 4/4</div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday3.jpg"
+              alt="Birthday 3"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
       </div>
-      <hr />
-      <div class="w3-row">
-        <div class="w3-third w3-center w3-card">
-          <div class="w3-padding-64">Part 1/3</div>
+    </section>
+
+    <section class="w3-container gallery-page">
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday4.jpg"
+              alt="Birthday 4"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
-        <div class="w3-third w3-center w3-card">
-          <div class="w3-padding-64">Part 2/3</div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday5.jpg"
+              alt="Birthday 5"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
-        <div class="w3-third w3-center w3-card">
-          <div class="w3-padding-64">Part 3/3</div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday6.jpg"
+              alt="Birthday 6"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w3-container gallery-page">
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday7.jpg"
+              alt="Birthday 7"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday8.jpg"
+              alt="Birthday 8"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday9.jpg"
+              alt="Birthday 9"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w3-container gallery-page">
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday10.jpg"
+              alt="Birthday 10"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday11.jpg"
+              alt="Birthday 11"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday12.jpg"
+              alt="Birthday 12"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w3-container gallery-page">
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday13.jpg"
+              alt="Birthday 13"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday14.jpg"
+              alt="Birthday 14"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/birthday-gallery/Birthday15.jpg"
+              alt="Birthday 15"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Footer-->
-     <div id="footer"></div>
+    <div id="footer"></div>
 
     <script src="scripts.js"></script>
+    <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
+      <img id="lightbox-img" src="" alt="Enlarged Image" />
+    </div>
   </body>
 </html>
