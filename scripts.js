@@ -64,19 +64,36 @@ document.addEventListener("click", function (event) {
 
 // -------------------- TOGGLE DARK MODE --------------------
 function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
+  // Toggle and store whether dark mode is active
+  const isDark = document.body.classList.toggle("dark-mode");
 
+  // Buttons for desktop and mobile
   const btnDesktop = document.getElementById("modeToggle");
   const btnMobile = document.getElementById("modeToggleMobile");
 
-  if (document.body.classList.contains("dark-mode")) {
+  // Update icons
+  if (btnDesktop) btnDesktop.textContent = isDark ? "☀️" : "🌙";
+  if (btnMobile) btnMobile.textContent = isDark ? "☀️" : "🌙";
+
+  // Save preference
+  localStorage.setItem("darkMode", isDark ? "true" : "false");
+}
+
+// -------------------- APPLY SAVED DARK MODE ON LOAD --------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const darkMode = localStorage.getItem("darkMode");
+
+  if (darkMode === "true") {
+    document.body.classList.add("dark-mode");
+
+    const btnDesktop = document.getElementById("modeToggle");
+    const btnMobile = document.getElementById("modeToggleMobile");
+
     if (btnDesktop) btnDesktop.textContent = "☀️";
     if (btnMobile) btnMobile.textContent = "☀️";
-  } else {
-    if (btnDesktop) btnDesktop.textContent = "🌙";
-    if (btnMobile) btnMobile.textContent = "🌙";
   }
-}
+});
+
 
 // -------------------- HEADER INJECTION --------------------
 document.addEventListener("DOMContentLoaded", function () {
@@ -247,7 +264,7 @@ function updateSlidePosition() {
 let autoSlide = setInterval(nextSlide, 4000);
 
 // Optional: reset timer when manually navigating
-document.querySelectorAll(".carousel-btn").forEach(btn => {
+document.querySelectorAll(".carousel-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     clearInterval(autoSlide);
     autoSlide = setInterval(nextSlide, 4000);
@@ -256,15 +273,14 @@ document.querySelectorAll(".carousel-btn").forEach(btn => {
 
 // Open the lightbox
 function openLightbox(imgSrc) {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
   lightboxImg.src = imgSrc;
-  lightbox.classList.add('show');
+  lightbox.classList.add("show");
 }
 
 // Close the lightbox
 function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  lightbox.classList.remove('show');
+  const lightbox = document.getElementById("lightbox");
+  lightbox.classList.remove("show");
 }
-

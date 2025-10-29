@@ -46,6 +46,7 @@ body::before {
   --card-bg: #98ece5; /* teal-tinted card */
 }
 
+
 body.dark-mode {
   --primary-color: #1abc9c;
   --secondary-color: #4b0082;
@@ -540,6 +541,155 @@ body.dark-mode .footer-socials a:hover {
   }
 }
 
+/* -------------------- About Us -------------------- */
+/* ---------- Mission Banner ---------- */
+.mission-banner {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    color-mix(in srgb, var(--primary-color) 80%, var(--button-bg))
+  );
+  color: var(--button-bg);
+  padding: 80px 20px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mission-quote {
+  font-family: "Georgia", serif;
+  font-size: 2em;
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--text-color);
+}
+
+/* ---------- Founder Section ---------- */
+.story-section {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Layout Container */
+.founder-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Founder Image */
+.founder-image {
+  flex: 1 1 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.founder-img {
+  width: 100%;
+  max-width: 370px;
+  border: 6px solid var(--accent-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 6px solid var(--secondary-color);
+}
+
+.founder-img:hover {
+  transform: scale(1.05);
+  border-color: var(--highlight-color);
+  box-shadow: 0 0 20px rgba(255, 200, 120, 0.4);
+}
+
+/* Founder Story */
+.founder-story {
+  flex: 2 1 500px;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .founder-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .founder-story {
+    max-width: 90%;
+  }
+
+  .founder-img {
+    width: 70%;
+    max-width: 280px;
+    margin-bottom: 25px;
+  }
+}
+
+/* ---------- Team Section ---------- */
+.team-section .card {
+  text-align: center;
+}
+
+.team-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.team-images img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-images img:hover {
+  transform: scale(1.1);
+}
+
+.inspiration-list {
+  margin-left: 20px;
+  padding-left: 0;
+  text-align: left;
+  color: var(--text-color);
+  display: inline-block;
+}
+
+.highlight-line {
+  color: var(--secondary-color);
+  font-weight: 800;
+  font-size: 1.2rem; /* slightly larger */
+}
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 768px) {
+  .mission-quote {
+    font-size: 1.4em;
+    padding: 0 15px;
+  }
+
+  .founder-img {
+    max-width: 200px;
+  }
+
+  .team-images img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 /* --------------------  Image Carousel -------------------- */
 .carousel-container {
   position: relative;
@@ -749,8 +899,6 @@ body.dark-mode .footer-socials a:hover {
 .gallery-card:hover img {
   transform: scale(1.05); /* subtle zoom on hover */
 }
-
-
 
 /* Mobile responsiveness */
 @media screen and (max-width: 768px) {
