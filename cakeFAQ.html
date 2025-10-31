@@ -26,45 +26,163 @@
     <!-- Header -->
     <div id="header"></div>
 
-    <!-- Main Content -->
-    <section class="w3-container w3-padding-large">
+    <div class="w3-container w3-teal w3-center">
       <h2 class="w3-center">Frequently Asked Questions</h2>
+    </div>
 
-      <!-- Aqua background card -->
-      <div class="card w3-margin-top">
-        <h3>Ordering Information</h3>
-        <p>
-          We take orders by phone, email, or through our online form. Please
-          call us after submitting your order online.
-        </p>
+    <!-- Main Content -->
+    <section class="w3-container w3-padding-32">
+    
 
-        <h3>Pricing</h3>
+      <!-- 1. Ordering Information -->
+      <button
+        onclick="toggleFAQ('faq1')"
+        class="w3-button w3-block w3-left-align w3-light-grey w3-hover-teal w3-margin-bottom"
+      >
+        Ordering Information
+      </button>
+      <div id="faq1" class="w3-hide w3-animate-opacity w3-padding faq-answer">
         <p>
-          All cakes are priced individually depending on design and complexity.
+          We take orders either by phone, email, or through our online form.
+          Please give as much lead time as possible. If you have a short-notice
+          order, ask us — we’ll try to make it happen! After submitting your
+          online order, please call us to confirm. Thank you.
         </p>
+      </div>
 
-        <h3>Picture Cakes & Corporate</h3>
+      <!-- 2. How much are your cakes? -->
+      <button
+        onclick="toggleFAQ('faq2')"
+        class="w3-button w3-block w3-left-align w3-light-grey w3-hover-teal w3-margin-bottom"
+      >
+        How much are your cakes?
+      </button>
+      <div id="faq2" class="w3-hide w3-animate-opacity w3-padding faq-answer">
         <p>
-          We can print images or logos on cakes and cookies — perfect for
-          corporate events or branding.
+          Because all of our cakes are priced individually by the complexity of
+          their design, we do not have a standard price list. Each cake is a
+          one-of-a-kind creation, made with care and attention to detail.
         </p>
+      </div>
 
-        <h3>Display Cakes</h3>
+      <!-- 3. How do I order a cake? -->
+      <button
+        onclick="toggleFAQ('faq3')"
+        class="w3-button w3-block w3-left-align w3-light-grey w3-hover-teal w3-margin-bottom"
+      >
+        How do I order a cake?
+      </button>
+      <div id="faq3" class="w3-hide w3-animate-opacity w3-padding faq-answer">
         <p>
-          Display cakes are available for viewing and sampling upon request.
+          To start the order process, please fill out the order form or email us
+          at
+          <a href="mailto:cakesbydesignedibleart@hotmail.com"
+            >cakesbydesignedibleart@hotmail.com</a
+          >
+          with:
         </p>
+        <ul>
+          <li>The date of your event</li>
+          <li>The occasion (wedding, birthday, etc.)</li>
+          <li>Event location, delivery address, and delivery time</li>
+          <li>Number of guests</li>
+          <li>Your daytime phone number and email address</li>
+          <li>Any cake inspiration or reference images</li>
+          <li>Two flavors you'd like to sample</li>
+        </ul>
+        <p>
+          We will contact you to discuss your order or schedule an appointment.
+          If you don't hear back, please call us — it can get busy! Every cake
+          we make is custom-made from start to finish.
+        </p>
+      </div>
 
-        <h3>Ordering Time</h3>
+      <!-- 4. Picture Cakes -->
+      <button
+        onclick="toggleFAQ('faq4')"
+        class="w3-button w3-block w3-left-align w3-light-grey w3-hover-teal w3-margin-bottom"
+      >
+        Picture Cakes
+      </button>
+      <div id="faq4" class="w3-hide w3-animate-opacity w3-padding faq-answer">
         <p>
-          Please allow 2–3 weeks for custom orders, depending on size and
-          complexity.
+          We can print your pictures, corporate logos, or images onto cakes,
+          cupcakes, and cookies! Displaying your logo on one of our designs is a
+          great way to brand your company. Picture cakes and cupcakes are
+          popular for corporate events, retirements, charity events, and
+          anniversaries.
         </p>
+      </div>
 
-        <h3>Special Requests</h3>
+      <!-- 5. Display Cakes / Reproductions -->
+      <button
+        onclick="toggleFAQ('faq5')"
+        class="w3-button w3-block w3-left-align w3-light-grey w3-hover-teal w3-margin-bottom"
+      >
+        Display Cakes / Reproductions
+      </button>
+      <div id="faq5" class="w3-hide w3-animate-opacity w3-padding faq-answer">
         <p>
-          We can accommodate special dietary needs. Call us to discuss
-          specifics.
+          We can make display cakes perfect for bridal events, outdoor weddings,
+          or magazine shoots. Please note: much of the cost lies in the
+          decoration time and detail — whether the base is real cake or
+          Styrofoam. Most cakes can be replicated, though there may be small
+          variations since each design is unique.
         </p>
+      </div>
+
+      <!-- 6. What's your payment policy? -->
+      <button
+        onclick="toggleFAQ('faq6')"
+        class="w3-button w3-block w3-left-align w3-light-grey w3-hover-teal w3-margin-bottom"
+      >
+        What's your payment policy?
+      </button>
+      <div id="faq6" class="w3-hide w3-animate-opacity w3-padding faq-answer">
+        <p>
+          A 50% non-refundable deposit is required to reserve your order; the
+          remaining balance is due at least two weeks before your event. Your
+          order is confirmed once we’ve received your signed contract and
+          deposit.
+        </p>
+        <p>
+          Payment can be made by cash, check, or credit card (Visa, Mastercard,
+          Amex, or Discover). Deposits are non-refundable. Balance payments are
+          refundable only if cancellation is made at least seven (7) business
+          days before the event.
+        </p>
+      </div>
+
+      <!-- 7. Do you deliver? -->
+      <button
+        onclick="toggleFAQ('faq7')"
+        class="w3-button w3-block w3-left-align w3-light-grey w3-hover-teal w3-margin-bottom"
+      >
+        Do you deliver?
+      </button>
+      <div id="faq7" class="w3-hide w3-animate-opacity w3-padding faq-answer">
+        <p>
+          Yes! Delivery is available for all cakes, especially those requiring
+          on-site assembly. Delivery fees are based on distance from North
+          Andover, MA, and we proudly deliver with Paramount Delivery Service.
+        </p>
+        <p>
+          Longer deliveries may be arranged on a case-by-case basis.
+          Self-transporting smaller cakes is usually fine, but we do not
+          recommend transporting large, 3D, or multi-tier cakes yourself. Cakes
+          by Design Edible Art is not responsible for any damage after pickup.
+        </p>
+      </div>
+
+      <!-- 8. Do you ship your cakes? -->
+      <button
+        onclick="toggleFAQ('faq8')"
+        class="w3-button w3-block w3-left-align w3-light-grey w3-hover-teal w3-margin-bottom"
+      >
+        Do you ship your cakes?
+      </button>
+      <div id="faq8" class="w3-hide w3-animate-opacity w3-padding faq-answer">
+        <p>We do not ship our cakes.</p>
       </div>
     </section>
 
