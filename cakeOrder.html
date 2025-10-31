@@ -4,20 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Order Form</title>
+
     <!-- W3.CSS + Font Awesome -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
     <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <!-- Header -->
     <div id="header"></div>
@@ -29,62 +33,82 @@
         Please fill out the form below and call us to confirm.
       </p>
 
-      <form
-        class="w3-container w3-card-4 w3-padding-large w3-margin-top w3-white"
-      >
-        <p>
-          <label>Event Date</label>
-          <input class="w3-input w3-border" type="date" name="event_date" />
-        </p>
-        <p>
-          <label>Occasion / Event Type</label>
-          <input class="w3-input w3-border" type="text" name="occasion" />
-        </p>
-        <p>
-          <label>Event Location / Delivery Address</label>
-          <input class="w3-input w3-border" type="text" name="address" />
-        </p>
-        <p>
-          <label>Delivery Time</label>
-          <input class="w3-input w3-border" type="time" name="delivery_time" />
-        </p>
-        <p>
-          <label>Number of Guests</label>
-          <input class="w3-input w3-border" type="number" name="guests" />
-        </p>
-        <p>
-          <label>Email</label>
-          <input class="w3-input w3-border" type="email" name="email" />
-        </p>
-        <p>
-          <label>Phone</label>
-          <input class="w3-input w3-border" type="text" name="phone" />
-        </p>
-        <p>
-          <label>Attach Cake Image (optional)</label>
-          <input class="w3-input w3-border" type="file" name="image" />
-        </p>
-        <p>
-          <label>Flavors to Sample (choose 2)</label>
-          <input class="w3-input w3-border" type="text" name="flavors" />
-        </p>
-        <p>
-          <label>Design Notes</label>
-          <textarea class="w3-input w3-border" name="design_notes"></textarea>
-        </p>
-        <p>
-          <button
-            class="w3-button w3-block w3-teal w3-margin-top"
-            type="submit"
-          >
-            Submit
-          </button>
-        </p>
-      </form>
+      <!-- Aqua background card -->
+      <div class="card">
+        <form class="w3-container w3-padding-large">
+          <p>
+            <label>Event Date</label>
+            <input class="w3-input w3-border" type="date" name="event_date" />
+          </p>
+
+          <p>
+            <label>Occasion / Event Type</label>
+            <input class="w3-input w3-border" type="text" name="occasion" />
+          </p>
+
+          <p>
+            <label>Event Location / Delivery Address</label>
+            <input class="w3-input w3-border" type="text" name="address" />
+          </p>
+
+          <p>
+            <label>Delivery Time</label>
+            <input
+              class="w3-input w3-border"
+              type="time"
+              name="delivery_time"
+            />
+          </p>
+
+          <p>
+            <label>Number of Guests</label>
+            <input class="w3-input w3-border" type="number" name="guests" />
+          </p>
+
+          <p>
+            <label>Email</label>
+            <input class="w3-input w3-border" type="email" name="email" />
+          </p>
+
+          <p>
+            <label>Phone</label>
+            <input class="w3-input w3-border" type="text" name="phone" />
+          </p>
+
+          <p>
+            <label>Attach Cake Image (optional)</label>
+            <input class="w3-input w3-border" type="file" name="image" />
+          </p>
+
+          <p>
+            <label>Flavors to Sample (choose 2)</label>
+            <input class="w3-input w3-border" type="text" name="flavors" />
+          </p>
+
+          <p>
+            <label>Design Notes</label>
+            <textarea
+              class="w3-input w3-border"
+              name="design_notes"
+              rows="5"
+            ></textarea>
+          </p>
+
+          <p>
+            <button
+              class="w3-button w3-block w3-teal w3-margin-top"
+              type="submit"
+            >
+              Submit
+            </button>
+          </p>
+        </form>
+      </div>
     </section>
 
-    <!-- Footer-->
+    <!-- Footer -->
     <div id="footer"></div>
+
     <script src="scripts.js"></script>
   </body>
 </html>
