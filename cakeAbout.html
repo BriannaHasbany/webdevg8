@@ -49,7 +49,7 @@
 
         <!-- Story Text -->
         <div class="founder-story card">
-          <h3>Our Story</h3>
+          <h3><strong>Our Story</strong></h3>
           <p>
             <strong>Chef Lina Hunter</strong> was born in
             <strong>Colombia, South America</strong>. After graduating from
@@ -79,27 +79,39 @@
     </section>
 
     <section class="w3-container w3-padding-64">
-      <div class="w3-row-padding w3-center">
+      <div class="w3-row-padding w3-center inspiration-section">
         <div class="w3-half">
           <div class="card">
-            <p><strong>Our inspiration comes from everywhere:</strong></p>
+            <h3><strong>Our inspiration comes from everywhere:</strong></h3>
             <ul class="inspiration-list">
-              <li>Art</li>
-              <li>Fashion</li>
-              <li>Fabric</li>
-              <li>Furniture</li>
-              <li>Architecture</li>
-              <li>Landscapes</li>
-              <li>Science</li>
-              <li>Music</li>
-              <li>History</li>
+              <li class="active" data-img="images/aboutCarousel/art.png">
+                Art
+              </li>
+              <li data-img="images/aboutCarousel/fashion.png">Fashion</li>
+              <li data-img="images/aboutCarousel/fabric.png">Fabric</li>
+              <li data-img="images/aboutCarousel/furniture.png">Furniture</li>
+              <li data-img="images/aboutCarousel/architecture.png">
+                Architecture
+              </li>
+              <li data-img="images/aboutCarousel/landscapes.png">Landscapes</li>
+              <li data-img="images/aboutCarousel/science.png">Science</li>
+              <li data-img="images/aboutCarousel/music.png">Music</li>
+              <li data-img="images/aboutCarousel/history.png">History</li>
             </ul>
             <p>
-              Most of all, our inspiration comes from each one of our incredible
-              clients. Every cake we create is custom made from concept to
-              consumption and is a completely original piece of edible art.
-              <br>
-              <br>
+              Most of all,
+              <strong
+                >our inspiration comes from each one of our incredible
+                clients!</strong
+              >
+              Every cake we create is custom made and is a completely original
+              piece of edible art.
+              <strong>
+                Click on an inspriation to see an image of what we
+                created!</strong
+              >
+              <br />
+              <br />
               <span class="highlight-line"
                 >If you can imagine it, we can create it.</span
               >
@@ -108,31 +120,34 @@
         </div>
 
         <div class="w3-half">
-          <div class="carousel-container">
-            <div class="carousel-slides">
-              <img src="images/cakePic1.jpg" alt="Cake 1" />
-              <img src="images/cakePic2.jpg" alt="Cake 2" />
-              <img src="images/cakePic6.jpg" alt="Cake 3" />
-              <img src="images/cakePic4.jpg" alt="Cake 4" />
-            </div>
-            <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
-            <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+          <div class="inspiration-preview w3-center">
+            <img
+              id="inspirationImage"
+              src="images/aboutCarousel/art.png"
+              alt="Cake Inspiration"
+              class="inspiration-img w3-round-large"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="w3-container w3-padding-64 team-section">
-      <div class="w3-full">
-        <div class="card">
-          <h3>Our Team</h3>
-          <p>
-            Lina leads a dedicated group of pastry artists who share her passion
-            for creativity, quality, and happiness in every bite.
-          </p>
-          <div class="team-images">
-            <img src="images/AboutUsPic1.jpg" alt="Team Member 1" />
-            <img src="images/AboutUsPic3.jpg" alt="Team Member 2" />
+    <section class="team-section w3-container w3-padding-32 w3-center">
+      <h3><strong>Meet the Artists Behind the Cakes!</strong></h3>
+      <br>
+
+      <div class="w3-row-padding w3-center w3-stretch">
+        <!-- First Artist -->
+        <div class="w3-half w3-margin-bottom">
+          <div class="image-card-small">
+            <img src="images/AboutUsPic1.jpg" alt="Artist 1"/>
+          </div>
+        </div>
+
+        <!-- Second Artist -->
+        <div class="w3-half">
+          <div class="image-card-small">
+            <img src="images/AboutUsPic3.jpg" alt="Artist 2" />
           </div>
         </div>
       </div>

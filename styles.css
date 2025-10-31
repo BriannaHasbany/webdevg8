@@ -46,7 +46,6 @@ body::before {
   --card-bg: #98ece5; /* teal-tinted card */
 }
 
-
 body.dark-mode {
   --primary-color: #1abc9c;
   --secondary-color: #4b0082;
@@ -635,36 +634,85 @@ body.dark-mode .footer-socials a:hover {
 }
 
 /* ---------- Team Section ---------- */
-.team-section .card {
-  text-align: center;
+.team-section {
+  margin-top: 40px;
 }
 
-.team-images {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
+.image-card-small img {
+  width: 400px;         /* or any fixed size you want */
+  height: auto;         /* keeps aspect ratio */
+  border: 6px solid var(--secondary-color); /* single border */
+  border-radius: 15px;  /* optional rounded corners */
+  object-fit: contain;
+  transition: transform 0.3s;
 }
 
-.team-images img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 3px solid var(--primary-color);
-  object-fit: cover;
-  transition: transform 0.3s ease;
+.image-card-small img:hover {
+  transform: scale(1.05);
 }
 
-.team-images img:hover {
-  transform: scale(1.1);
+
+
+.inspiration-section {
+  margin-top: 2rem;
+  align-items: center;
 }
 
 .inspiration-list {
-  margin-left: 20px;
-  padding-left: 0;
-  text-align: left;
-  color: var(--text-color);
-  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 25px auto;
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.inspiration-list li {
+  background: var(--button-bg);
+  color: var(--button-color);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.inspiration-list li:hover {
+  background: var(--primary-color);
+  color: var(--button-bg);
+  transform: scale(1.05);
+}
+
+.inspiration-list li.active {
+  background: var(--primary-color);
+  color: var(--button-bg);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-color);
+}
+
+.inspiration-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border: 5px solid var(--accent-color);
+  transition: opacity 0.5s ease, transform 0.4s ease;
+  border: 6px solid var(--accent-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border: 6px solid var(--secondary-color);
+}
+
+.inspiration-img:hover {
+  transform: scale(1.05);
+  border-color: var(--highlight-color);
+  box-shadow: 0 0 20px rgba(255, 200, 120, 0.4);
+}
+
+.inspiration-img.fade {
+  opacity: 0;
+  transform: scale(0.97);
 }
 
 .highlight-line {
@@ -691,11 +739,26 @@ body.dark-mode .footer-socials a:hover {
 }
 
 /* --------------------  Image Carousel -------------------- */
-.carousel-container {
+.carousel-container1 {
   position: relative;
   width: 100%;
   max-width: 600px; /* desired width */
   max-height: 400px; /* limit height */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+}
+
+.carousel-container2 {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* desired width */
+  max-height: 600px; /* limit height */
   margin: 20px auto;
   overflow: hidden;
   border-radius: 15px;

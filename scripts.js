@@ -94,6 +94,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const inspirationItems = document.querySelectorAll(".inspiration-list li");
+  const inspirationImage = document.getElementById("inspirationImage");
+
+  inspirationItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const newImage = item.getAttribute("data-img");
+
+      // Fade out image
+      inspirationImage.classList.add("fade");
+
+      // Update active list item
+      inspirationItems.forEach((li) => li.classList.remove("active"));
+      item.classList.add("active");
+
+      setTimeout(() => {
+        inspirationImage.src = newImage;
+        inspirationImage.classList.remove("fade");
+      }, 300);
+    });
+  });
+});
 
 // -------------------- HEADER INJECTION --------------------
 document.addEventListener("DOMContentLoaded", function () {
