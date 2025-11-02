@@ -25,37 +25,149 @@
     <div id="header"></div>
 
     <!-- Main Content -->
-    <section class="w3-container">
-      <div class="w3-row">
-        <div class="w3-quarter w3-center w3-card">
-          <div class="w3-padding-64">Part 1/4</div>
+    <div class="w3-container w3-teal w3-center">
+      <h1>Cupcakes/Sweets Gallery</h1>
+      <h5><i>Click Photos to Enlarge</i></h5>
+    </div>
+
+    <section class="w3-container gallery-page">
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/cakepops.jpg"
+              alt="CakePops"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
-        <div class="w3-quarter w3-center w3-card">
-          <div class="w3-padding-64">Part 2/4</div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/cookies.jpg"
+              alt="Cookies"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
-        <div class="w3-quarter w3-center w3-card">
-          <div class="w3-padding-64">Part 3/4</div>
-        </div>
-        <div class="w3-quarter w3-center w3-card">
-          <div class="w3-padding-64">Part 4/4</div>
-        </div>
-      </div>
-      <hr />
-      <div class="w3-row">
-        <div class="w3-third w3-center w3-card">
-          <div class="w3-padding-64">Part 1/3</div>
-        </div>
-        <div class="w3-third w3-center w3-card">
-          <div class="w3-padding-64">Part 2/3</div>
-        </div>
-        <div class="w3-third w3-center w3-card">
-          <div class="w3-padding-64">Part 3/3</div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/cupcake1.jpg"
+              alt="Cupcake 1"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
         </div>
       </div>
     </section>
 
+    <section class="w3-container gallery-page">
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/cupcake2.jpg"
+              alt="Cupcake 2"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/cupcake3.jpg"
+              alt="Cupcake 3"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/cupcake4.jpg"
+              alt="Cupcake 4"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/cupcake5.jpg"
+              alt="Cupcake 5"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/cupcake6.png"
+              alt="Cupcake 6"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/cupcake7.png"
+              alt="Cupcake 7"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/oreos.jpg"
+              alt="Oreos"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/riceCrispies.jpg"
+              alt="Rice Crispies"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+        <div class="w3-third">
+          <div class="gallery-card">
+            <img
+              src="images/cupcake-sweets-gallery/sweets.jpg"
+              alt="Sweets"
+              onclick="openLightbox(this.src)"
+            />
+          </div>
+        </div>
+
+
+      </div>
+    </section>
     <!-- Footer-->
     <div id="footer"></div>
+    <!-- Lightbox overlay (used by scripts.js openLightbox / closeLightbox) -->
+    <div id="lightbox" class="lightbox-overlay" onclick="closeLightbox()">
+      <img id="lightbox-img" src="" alt="Enlarged photo" />
+    </div>
+
 
     <script src="scripts.js"></script>
   </body>

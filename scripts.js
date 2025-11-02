@@ -94,6 +94,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const inspirationItems = document.querySelectorAll(".inspiration-list li");
+  const inspirationImage = document.getElementById("inspirationImage");
+
+  inspirationItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const newImage = item.getAttribute("data-img");
+
+      // Fade out image
+      inspirationImage.classList.add("fade");
+
+      // Update active list item
+      inspirationItems.forEach((li) => li.classList.remove("active"));
+      item.classList.add("active");
+
+      setTimeout(() => {
+        inspirationImage.src = newImage;
+        inspirationImage.classList.remove("fade");
+      }, 300);
+    });
+  });
+});
 
 // -------------------- HEADER INJECTION --------------------
 document.addEventListener("DOMContentLoaded", function () {
@@ -130,8 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="dropdown">
             <button class="dropbtn" onclick="toggleDropdown('contactDropdownDesktop')">Contact ▾</button>
             <div id="contactDropdownDesktop" class="dropdown-content">
-              <a href="cakeContact.html">Contact Info</a>
-              <a href="cakeDirections.html">Directions</a>
+              <a href="cakeContact.html">Contact Us</a>
+              <a href="cakeDirections.html">Directions & Contact Info</a>
               <a href="cakeOrder.html">Order Form</a>
               <a href="cakeFAQ.html">FAQs</a>
             </div>
@@ -173,8 +195,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <button onclick="toggleDropdown('contactDropdown')" class="w3-bar-item w3-button">Contact ▾</button>
       <div id="contactDropdown" class="w3-hide w3-bar-block">
-        <a href="cakeContact.html" class="w3-bar-item w3-button">Contact Info</a>
-        <a href="cakeDirections.html" class="w3-bar-item w3-button">Directions</a>
+        <a href="cakeContact.html" class="w3-bar-item w3-button">Contact Us</a>
+        <a href="cakeDirections.html" class="w3-bar-item w3-button">Directions & Contact Info</a>
         <a href="cakeOrder.html" class="w3-bar-item w3-button">Order Form</a>
         <a href="cakeFAQ.html" class="w3-bar-item w3-button">FAQs</a>
       </div>
@@ -284,3 +306,19 @@ function closeLightbox() {
   const lightbox = document.getElementById("lightbox");
   lightbox.classList.remove("show");
 }
+
+
+function toggleFAQ(id) {
+  // Close all open FAQs
+  const allAnswers = document.querySelectorAll('.faq-answer');
+  allAnswers.forEach(answer => {
+    if (answer.id !== id) {
+      answer.classList.remove('w3-show');
+    }
+  });
+
+  // Toggle the one that was clicked
+  const currentFAQ = document.getElementById(id);
+  currentFAQ.classList.toggle('w3-show');
+}
+
